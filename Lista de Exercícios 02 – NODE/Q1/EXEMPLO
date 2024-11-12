@@ -1,0 +1,11 @@
+function esperar(milissegundos) {
+    return new Promise(resolve => {
+        setTimeout(resolve, milissegundos);
+    });
+}
+
+(async () => {
+    console.log('Iniciando espera...');
+    await esperar(2000);
+    console.log('Esperou 2 segundos!');
+})();

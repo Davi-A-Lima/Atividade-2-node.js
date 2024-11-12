@@ -1,0 +1,25 @@
+const fs = require('fs').promises;
+const path = require('path');
+async function readdirPromise(caminho) {
+    try {
+        
+        await fs.access(caminho);
+        
+     
+        const arquivos = await fs.readdir(caminho);
+        return arquivos;
+    } catch (erro) {
+        throw new Error(`Erro ao ler o diretório "${caminho}": ${erro.message}`);
+    }
+}
+
+
+(async () => {
+    const caminhoDoDiretorio = 'C:/Área de Trabalho/Lista de Exercícios 02 – NODE/Q10/EXEMPLO'; 
+    try {
+        const arquivos = await readdirPromise(caminhoDoDiretorio);
+        console.log('Conteúdo do diretório:', arquivos);
+    } catch (erro) {
+        console.error(erro.message);
+    }
+})();

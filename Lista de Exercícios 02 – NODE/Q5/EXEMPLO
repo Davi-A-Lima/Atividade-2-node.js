@@ -1,0 +1,19 @@
+async function buscarNaApi() {
+    const resposta = { status: 200, data: 'Dados da API' }; 
+
+    if (resposta.status === 200) {
+        return resposta.data;
+    } else {
+        throw new Error('Erro ao buscar dados da API');
+    }
+}
+
+
+(async () => {
+    try {
+        const dados = await buscarNaApi();
+        console.log(dados);
+    } catch (error) {
+        console.error(error.message);
+    }
+})();

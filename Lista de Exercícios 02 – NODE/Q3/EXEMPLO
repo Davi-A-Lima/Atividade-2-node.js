@@ -1,0 +1,13 @@
+function buscarDadosSimulado(num) {
+    return Promise.resolve(`Dados ${num}`);
+}
+
+
+(async () => {
+    const resultados = await Promise.all([
+        buscarDadosSimulado(1),
+        buscarDadosSimulado(2),
+        buscarDadosSimulado(3)
+    ]);
+    console.log('Resultados:', resultados);
+})();

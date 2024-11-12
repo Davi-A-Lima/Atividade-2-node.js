@@ -1,0 +1,11 @@
+function chamarApi(id) {
+    return esperar(1000).then(() => `Dados da API ${id}`);
+}
+
+
+(async () => {
+    for (let i = 1; i <= 3; i++) {
+        const dados = await chamarApi(i);
+        console.log(dados);
+    }
+})();

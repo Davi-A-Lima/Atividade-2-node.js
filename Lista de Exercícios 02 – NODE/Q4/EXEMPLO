@@ -1,0 +1,11 @@
+async function buscaSegura() {
+    try {
+        const dados = await buscarDados('erro');
+        console.log(dados);
+    } catch (error) {
+        console.error('Erro capturado:', error.message);
+    }
+}
+
+
+buscaSegura();

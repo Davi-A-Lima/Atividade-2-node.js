@@ -1,0 +1,16 @@
+async function buscarDados(entrada) {
+    if (entrada === 'erro') {
+        throw new Error('Entrada inválida!');
+    }
+    return 'Dados encontrados!';
+}
+
+
+(async () => {
+    try {
+        const dados = await buscarDados('erro');
+        console.log(dados);
+    } catch (error) {
+        console.error(error.message);
+    }
+})();

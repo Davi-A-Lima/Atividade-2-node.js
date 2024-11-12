@@ -1,0 +1,14 @@
+function rejeitarDepois(milissegundos) {
+    return new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Rejeitada após o tempo!')), milissegundos);
+    });
+}
+
+
+(async () => {
+    try {
+        await rejeitarDepois(2000);
+    } catch (error) {
+        console.error(error.message);
+    }
+})();

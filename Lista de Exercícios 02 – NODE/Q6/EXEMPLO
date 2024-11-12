@@ -1,0 +1,13 @@
+async function primeiraResolvida(promises) {
+    return Promise.race(promises);
+}
+
+
+(async () => {
+    const resultado = await primeiraResolvida([
+        esperar(3000).then(() => 'Resolvida após 3 segundos'),
+        esperar(1000).then(() => 'Resolvida após 1 segundo'),
+        esperar(2000).then(() => 'Resolvida após 2 segundos')
+    ]);
+    console.log('Primeira resolvida:', resultado);
+})();

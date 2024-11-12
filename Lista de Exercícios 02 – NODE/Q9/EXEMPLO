@@ -1,0 +1,10 @@
+function dormir(milissegundos) {
+    return new Promise(resolve => setTimeout(resolve, milissegundos));
+}
+
+// Exemplo de uso
+(async () => {
+    console.log('Olá!');
+    await dormir(2000);
+    console.log('Depois de 2 segundos');
+})();
